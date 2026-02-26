@@ -24,11 +24,11 @@ const App = () => {
     return <h1>{props.course}</h1>
   }
   
-  const Content = (props) => {
+  const Content = ({parts}) => {
 
     return (
-      props.parts.map(part => 
-      <PrintPart key={part.id} part ={part} />
+      parts.map(part => 
+        <PrintPart key={part.id} part ={part} />
       )
 
     )
@@ -54,7 +54,7 @@ const App = () => {
   return (
     <div>
       <Header course={course.name} />
-      <Content parts={course.parts}/>
+      <Content parts={parts={parts}}/>
       <Total parts={course.parts} />
     </div>
   )
